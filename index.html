@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Number</title>
+    <link rel="stylesheet" href="guess.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Guessing Number Game</h1>
+        <input type="text" id="num" required >
+        <button onclick="check()"> Check</button>
+        <h2 id="para1"> Your are Right / Wrong</h2>
+        <h3 id="para2"> Your Score</h3>
+
+        <script>
+            var num = document.getElementById("num")
+            var para1 = document.getElementById("para1")
+            var para2 = document.getElementById("para2")
+
+            var randomnum = Math.floor(Math.random()*10)
+            var score = 10
+            function check() {
+                var enterednum = num.value
+
+                if (enterednum == randomnum) {
+                    para1.textContent = enterednum + "    Your Answer is Right"
+                    para2.score = "Your Score  :" 
+                    score = score + 1 
+                    alert("You Win")
+                    alert("Now Refresh Your Page")
+                    para2.textContent = "Your Score  :  " +score
+                    console.log(randomnum)
+
+                }
+                else {
+                    para1.textContent = enterednum + "    Your Answer is Wrong"
+                    para2.score = "Your Score  :" 
+                    score = score - 1 
+                    para2.textContent = "Your Score  :  " +score
+                    console.log(randomnum)
+                }
+
+            }
+
+        </script>
+
+
+    </div>
+
+</body>
+</html>
